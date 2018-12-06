@@ -14,13 +14,14 @@ top=2.6 true cm,bottom=2.2 true cm,left=1.8 true cm,right=1.8 true cm]{geometry}
 
 \maketitle
 
-\section{Chapter 2}
-\subsection{ex 2.1}
+Gaussian distribution
+\subsection{Chapter 2}
+\subsubsection{ex 2.1}
 \begin{equation}
 {\mathbf{u}^T}\mathbf{v} = \sum\limits_{i = 1}^n {{u_i}{v_i}}  = \mathrm{tr}\left( {\mathbf{v}{\mathbf{u}^T}} \right)
 \end{equation}
 
-\subsection{ex 2.2}
+\subsubsection{ex 2.2}
 \begin{equation}
 \begin{split}
 H\left( {\mathbf{x},\mathbf{y}} \right) &=  - \iint {p\left( {\mathbf{x},\mathbf{y}} \right)\ln }p\left( {\mathbf{x},\mathbf{y}} \right)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{y} \\ 
@@ -30,13 +31,32 @@ H\left( {\mathbf{x},\mathbf{y}} \right) &=  - \iint {p\left( {\mathbf{x},\mathbf
 \end{split}
 \end{equation}
 
-\subsection{ex 2.3}
+\subsubsection{ex 2.3}
 \begin{equation}
 \begin{split}
 E\left( {\mathbf{x}{\mathbf{x}^T}} \right) &= E\left( {\left( {\mathbf{x} - \boldsymbol{\mu}  + \boldsymbol{\mu} } \right){{\left( {\mathbf{x} - \boldsymbol{\mu}  + \boldsymbol{\mu} } \right)}^T}} \right) \hfill \\
 &= E\left( {\underbrace {\left( {\mathbf{x} - \boldsymbol{\mu} } \right){{\left( {\mathbf{x} - \boldsymbol{\mu} } \right)}^T}}_{\boldsymbol{\Sigma}}  + \underbrace {\boldsymbol{\mu} {{\left( {\mathbf{x} - \boldsymbol{\mu} } \right)}^T}}_{\boldsymbol{\mu} {\mathbf{0}^T}} + \underbrace {\left( {\mathbf{x} - \boldsymbol{\mu} } \right){\boldsymbol{\mu} ^T}}_{\mathbf{0}{\boldsymbol{\mu} ^T}} + \boldsymbol{\mu} {\boldsymbol{\mu} ^T}} \right) \hfill \\
 &= \boldsymbol{\Sigma}  + \boldsymbol{\mu} {\boldsymbol{\mu} ^T} \hfill \\ 
 \end{split}
+\end{equation}
+
+\subsubsection{ex 2.4}
+The integrate of an odd function is zero in the symmetric interval.
+\begin{equation}
+	\begin{split}
+		E\left(\mathbf{x} \right) &= \int_{-\infty}^{+\infty}\boldsymbol{x}p\left(\boldsymbol{x}\right)d\boldsymbol{x} \hfill \\
+		&= \int_{-\infty}^{+\infty}\frac{\boldsymbol{x}}{\sqrt{(2\pi)^N\text{det}\boldsymbol{\Sigma}}}\text{exp}\left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right)d\boldsymbol{x} \hfill \\  
+		&=  
+		\int_{-\infty}^{+\infty}\frac{\boldsymbol{y}+\boldsymbol{\mu}}{\sqrt{(2\pi)^N\text{det}\boldsymbol{\Sigma}}}\text{exp}\left(-\frac{1}{2}\boldsymbol{y}^T\boldsymbol{\Sigma}^{-1}\boldsymbol{y}\right)d\boldsymbol{y} \hfill \\
+		&=
+		\underbrace{\int_{-\infty}^{+\infty}\frac{\boldsymbol{y}}{\sqrt{(2\pi)^N\text{det}\boldsymbol{\Sigma}}}\text{exp}\left(-\frac{1}{2}\boldsymbol{y}^T\boldsymbol{\Sigma}^{-1}\boldsymbol{y}\right)d\boldsymbol{y}}_{0} +\hfill
+		\\& \int_{-\infty}^{+\infty}\frac{\boldsymbol{\mu}}{\sqrt{(2\pi)^N\text{det}\boldsymbol{\Sigma}}}\text{exp}\left(-\frac{1}{2}\boldsymbol{x}^T\boldsymbol{\Sigma}^{-1}\boldsymbol{x}\right)d\boldsymbol{x} \hfill
+		\\&=
+		\boldsymbol{\mu}\underbrace{\int_{-\infty}^{+\infty}\frac{1}{\sqrt{(2\pi)^N\text{det}\boldsymbol{\Sigma}}}\text{exp}\left(-\frac{1}{2}\boldsymbol{y}^T\boldsymbol{\Sigma}^{-1}\boldsymbol{y}\right)d\boldsymbol{y}}_{\boldsymbol{y}\sim\boldsymbol{N}(0,\boldsymbol{\Sigma})} \hfill
+		\\&=
+		\boldsymbol{\mu}\underbrace{\int_{-\infty}^{+\infty}p\left(\boldsymbol{y}\right)d\boldsymbol{y}}_{1} \hfill
+		\\&=   \boldsymbol{\mu}
+	\end{split}
 \end{equation}
 
 
